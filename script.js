@@ -25,8 +25,35 @@ document.addEventListener('DOMContentLoaded', () => {
       before.src = item.dataset.before;
       const after = new Image();
       after.src = item.dataset.after;
+      
+      // Also apply shimmer to the thumbnail itself
+      const thumbImg = item.querySelector('img');
+      if (thumbImg) {
+        handleImageLoading(thumbImg, item);
+      }
     });
   });
+
+  // Utility: Handle Image Loading with Shimmer
+  function handleImageLoading(img, container) {
+    if (!img || !container) return;
+    
+    // Add shimmer to container
+    container.classList.add('shimmer-loading');
+    img.classList.remove('loaded');
+
+    const onComplete = () => {
+      container.classList.remove('shimmer-loading');
+      img.classList.add('loaded');
+    };
+
+    if (img.complete) {
+      onComplete();
+    } else {
+      img.addEventListener('load', onComplete, { once: true });
+      img.addEventListener('error', onComplete, { once: true });
+    }
+  }
 
   const scrollLayer = document.getElementById('scroll-layer');
   const fixedLayer = document.getElementById('fixed-layer');
@@ -217,6 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const nlAfterOverlay = document.getElementById('nl-after-overlay');
 
   if (nlMainSlider && nlHandle && nlAfterOverlay) {
+    // Initial shimmer for the main images
+    handleImageLoading(nlBeforeImg, nlMainSlider);
+    handleImageLoading(nlAfterImg, nlMainSlider);
     let isDraggingHandle = false;
 
     // --- Dock Logic ---
@@ -233,6 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
           // Swap images
           nlBeforeImg.src = item.dataset.before;
           nlAfterImg.src = item.dataset.after;
+          
+          // Apply shimmer to the slider while new images load
+          handleImageLoading(nlBeforeImg, nlMainSlider);
+          handleImageLoading(nlAfterImg, nlMainSlider);
+
           // Reset handle position to middle
           nlAfterOverlay.style.clipPath = `inset(0 0 0 50%)`;
           nlHandle.style.left = `50%`;

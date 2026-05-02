@@ -513,6 +513,17 @@ body.is-loading .cloud-loop-container {
   cursor: col-resize;
   box-shadow: var(--shadow-drop);
   user-select: none;
+  background: #f0f0f0; /* Base color */
+}
+
+/* Image fade-in effect */
+.ba-before, .ba-after, .nl-dock-item img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.ba-before.loaded, .ba-after.loaded, .nl-dock-item img.loaded {
+  opacity: 1;
 }
 
 .ba-before,
@@ -653,6 +664,7 @@ body.is-loading .cloud-loop-container {
   position: relative;
   transform-origin: bottom center;
   flex-shrink: 0;
+  background: #f0f0f0;
 }
 
 .nl-dock-item img {
