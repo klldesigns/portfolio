@@ -17,7 +17,7 @@
   <div id="loader" class="loader-wrapper">
     <div class="loader-content">
       <div class="loader-logo">
-        <img src="./public/mainlogo.png" alt="Loading Logo">
+        <img src="./public/mainlogo.png" alt="Loading Logo" fetchpriority="high">
       </div>
       <div class="loader-progress">
         <div class="loader-bar"></div>
@@ -54,7 +54,7 @@
           <div class="yt-label-top">مخصصة</div>
           <div class="yt-label-bottom">للـ YouTube</div>
         </div>
-        <img class="logosyoutube-icon" loading="lazy" alt="" src="./public/logos-youtube-icon2.svg">
+        <img class="logosyoutube-icon" loading="lazy" decoding="async" alt="" src="./public/logos-youtube-icon2.svg">
       </div>
     </div>
 
@@ -72,8 +72,8 @@
     <main class="page1" id="home">
       <!-- Cloud moves right-to-left in a continuous loop -->
       <div class="cloud-loop-container">
-        <img class="cloud-loop cloud-loop-1" alt="" src="./public/cloud@2x.png" />
-        <img class="cloud-loop cloud-loop-2" alt="" src="./public/cloud@2x.png" />
+        <img class="cloud-loop cloud-loop-1" alt="" src="./public/cloud@2x.png" decoding="async" />
+        <img class="cloud-loop cloud-loop-2" alt="" src="./public/cloud@2x.png" decoding="async" />
       </div>
 
       <!-- Top: title badge -->
@@ -90,7 +90,7 @@
       <!-- Center: main logo (stable, behind cloud) -->
       <div class="page1-logo reveal reveal-scale reveal-delay-2">
         <div class="group">
-          <img class="main-logo" loading="lazy" alt="Logo" src="./public/mainlogo.png" />
+          <img class="main-logo" fetchpriority="high" alt="Logo" src="./public/mainlogo.png" />
         </div>
       </div>
 
@@ -141,27 +141,27 @@
           <div class="nl-dock">
             <div class="nl-dock-item active" data-index="0" data-before="./public/designs/1-before.png"
               data-after="./public/designs/1-after.png">
-              <img src="./public/designs/1-after.png" alt="Thumb 1">
+              <img src="./public/designs/1-after.png" alt="Thumb 1" loading="lazy" decoding="async">
             </div>
             <div class="nl-dock-item" data-index="1" data-before="./public/designs/4-before.png"
               data-after="./public/designs/4-after.png">
-              <img src="./public/designs/4-after.png" alt="Thumb 2">
+              <img src="./public/designs/4-after.png" alt="Thumb 2" loading="lazy" decoding="async">
             </div>
             <div class="nl-dock-item" data-index="2" data-before="./public/designs/5-before.png"
               data-after="./public/designs/5-after.png">
-              <img src="./public/designs/5-after.png" alt="Thumb 3">
+              <img src="./public/designs/5-after.png" alt="Thumb 3" loading="lazy" decoding="async">
             </div>
             <div class="nl-dock-item" data-index="3" data-before="./public/designs/7-before.png"
               data-after="./public/designs/7-after.png">
-              <img src="./public/designs/7-after.png" alt="Thumb 4">
+              <img src="./public/designs/7-after.png" alt="Thumb 4" loading="lazy" decoding="async">
             </div>
             <div class="nl-dock-item" data-index="4" data-before="./public/designs/8-before.png"
               data-after="./public/designs/8-after.png">
-              <img src="./public/designs/8-after.png" alt="Thumb 5">
+              <img src="./public/designs/8-after.png" alt="Thumb 5" loading="lazy" decoding="async">
             </div>
             <div class="nl-dock-item" data-index="5" data-before="./public/designs/9-before.png"
               data-after="./public/designs/9-after.png">
-              <img src="./public/designs/9-after.png" alt="Thumb 6">
+              <img src="./public/designs/9-after.png" alt="Thumb 6" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -174,21 +174,21 @@
 
       <!-- Background decoration group — rotates with carousel -->
       <div class="rotate-contact-container">
-        <img class="rotate-contact-img" src="./public/rotateContact.png" alt="Rotate Contact" />
+        <img class="rotate-contact-img" src="./public/rotateContact.png" alt="Rotate Contact" loading="lazy" decoding="async" />
       </div>
 
       <!-- Clouds decoration -->
       <div class="clouds">
-        <img class="icon" alt="" src="./public/cloud@2x.png" />
-        <img class="icon2" alt="" src="./public/cloud@2x.png" />
+        <img class="icon" alt="" src="./public/cloud@2x.png" loading="lazy" decoding="async" />
+        <img class="icon2" alt="" src="./public/cloud@2x.png" loading="lazy" decoding="async" />
       </div>
 
       <!-- Small clouds at the bottom edge -->
       <div class="small-clouds">
-        <img src="./public/cloud@2x.png" class="sc-1" alt="cloud">
-        <img src="./public/cloud@2x.png" class="sc-2" alt="cloud">
-        <img src="./public/cloud@2x.png" class="sc-3" alt="cloud">
-        <img src="./public/cloud@2x.png" class="sc-4" alt="cloud">
+        <img src="./public/cloud@2x.png" class="sc-1" alt="cloud" loading="lazy" decoding="async">
+        <img src="./public/cloud@2x.png" class="sc-2" alt="cloud" loading="lazy" decoding="async">
+        <img src="./public/cloud@2x.png" class="sc-3" alt="cloud" loading="lazy" decoding="async">
+        <img src="./public/cloud@2x.png" class="sc-4" alt="cloud" loading="lazy" decoding="async">
       </div>
 
       <!-- Center: contact content -->

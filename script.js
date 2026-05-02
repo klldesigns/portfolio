@@ -3,14 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('is-loading');
 
   // Handle Loader Fade Out
+  const hideLoader = () => {
+    if (loader && !loader.classList.contains('fade-out')) {
+      loader.classList.add('fade-out');
+      document.body.classList.remove('is-loading');
+    }
+  };
+
+  // Failsafe: hide loader after 3.5 seconds even if everything hasn't loaded
+  const loaderFailsafe = setTimeout(hideLoader, 3500);
+
   window.addEventListener('load', () => {
-    // Add a small delay so the animation feels premium and not jerky
-    setTimeout(() => {
-      if (loader) {
-        loader.classList.add('fade-out');
-        document.body.classList.remove('is-loading');
-      }
-    }, 1500);
+    clearTimeout(loaderFailsafe);
+    // Small delay for smooth transition
+    setTimeout(hideLoader, 500);
+    
+    // Preload other design images after main load to ensure smooth switching
+    const dockItems = document.querySelectorAll('.nl-dock-item');
+    dockItems.forEach(item => {
+      const before = new Image();
+      before.src = item.dataset.before;
+      const after = new Image();
+      after.src = item.dataset.after;
+    });
   });
 
   const scrollLayer = document.getElementById('scroll-layer');

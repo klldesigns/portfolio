@@ -31,6 +31,8 @@
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
   z-index: 1;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 100vh;
 }
 
 .scroll-layer>.page-active {
