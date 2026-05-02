@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const loader = document.getElementById('loader');
+
+  // Handle Loader Fade Out
+  window.addEventListener('load', () => {
+    // Add a small delay so the animation feels premium and not jerky
+    setTimeout(() => {
+      if (loader) {
+        loader.classList.add('fade-out');
+      }
+    }, 1500);
+  });
+
   const scrollLayer = document.getElementById('scroll-layer');
   const fixedLayer = document.getElementById('fixed-layer');
   const navLinks = document.querySelectorAll('.nav-link');
