@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="خليل - مصمم صور مصغرة محترف للتعاون المهني وخدمات التصميم" />
+    <title>خليل | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-theme="home">
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+      <div class="loader__ring"></div>
+    </div>
+
+    <!-- LAYER 1: Scroll-snapped panels -->
+    <main id="snap" class="snap" aria-label="صفحات الموقع">
+      <!-- HOME -->
+      <section id="home" class="panel panel--home" data-theme="home" aria-label="الرئيسية">
+        <div class="bg bg--home" aria-hidden="true">
+          <img class="bg__cloudMain" src="./mainCloud.png" alt="" />
+          <img class="bg__cloudSmall bg__cloudSmall--1" src="./smallCloud1.png" alt="" />
+          <img class="bg__cloudSmall bg__cloudSmall--2" src="./smallCloud2.png" alt="" />
+        </div>
+      </section>
+
+      <!-- DESIGNS -->
+      <section id="designs" class="panel panel--designs" data-theme="designs" aria-label="التصاميم">
+        <div class="bg bg--designs" aria-hidden="true">
+          <div class="carousel" id="carousel">
+            <button class="carousel__btn carousel__btn--next" type="button" aria-label="التالي">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+            <button class="carousel__btn carousel__btn--prev" type="button" aria-label="السابق">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+
+            <div class="carousel__frame">
+              <img class="carousel__card" src="./card1.png" alt="تصميم صورة مصغرة" />
+              <canvas id="scratchCanvas" class="carousel__scratch"></canvas>
+              <div class="scratch__hint" id="scratchHint">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                <span>إخدش هنا</span>
+              </div>
+            </div>
+          </div>
+
+          <img class="bg__logoSecond" src="./logoSecond.png" alt="" />
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="panel panel--contact" data-theme="contact" aria-label="التواصل">
+        <div class="bg bg--contact" aria-hidden="true">
+          <div class="contactCard">
+            <img class="contactCard__frame" src="./contactframe.png" alt="" />
+            <img class="contactCard__logo" src="./logoContact.png" alt="خليل" />
+            <a href="#" class="contactCard__linkBtn" aria-label="رابط التواصل">
+              <img class="contactCard__linkFrame" src="./linkframe.png" alt="" />
+            </a>
+          </div>
+
+          <div class="contactDots" aria-hidden="true">
+            <span class="contactDots__dot contactDots__dot--active"></span>
+            <span class="contactDots__dot"></span>
+          </div>
+
+          <img class="bg__logoLast" src="./logolast.png" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <!-- LAYER 2: Fixed overlay UI -->
+    <div class="overlay" aria-hidden="false">
+      <header class="topbar" aria-label="التنقل">
+        <nav class="nav" id="nav" aria-label="روابط الصفحات">
+          <button class="nav__link is-active" type="button" data-target="#home">الرئيسية</button>
+          <button class="nav__link" type="button" data-target="#designs">التصاميم</button>
+          <button class="nav__link" type="button" data-target="#contact">التواصل</button>
+          <span class="nav__underline" aria-hidden="true"></span>
+        </nav>
+
+        <button class="hamburger" id="hamburger" type="button" aria-label="القائمة">
+          <span></span><span></span><span></span>
+        </button>
+
+        <a class="ytPill" href="#" aria-label="قناة يوتيوب">
+          <span class="ytPill__text">مخصصة لـ</span>
+          <span class="ytPill__brand">YouTube</span>
+          <img class="ytPill__icon" src="./youtube2.png" alt="" />
+        </a>
+      </header>
+
+      <aside class="sideLeft" aria-label="نص جانبي">
+        <p class="sideLeft__stack">
+          تصميم<br />لافت<br />نظيف<br />بارز عن غيره<br />يترك أثر
+        </p>
+      </aside>
+
+      <aside class="sideRight" aria-label="حساب المصمم">
+        <div class="sideRight__handle">@klldesigns | على المنصات</div>
+      </aside>
+
+      <section class="centerText" aria-label="نص رئيسي">
+        <h1 class="centerText__title" data-for="home">تصاميم صور مصغرة</h1>
+        <h1 class="centerText__title is-hidden" data-for="designs">ملخص النجاح</h1>
+        <h1 class="centerText__title is-hidden" data-for="contact">تواصل معنا — للتعاون المهني وخدمات التصميم</h1>
+
+        <div class="centerText__hero">
+          <img class="centerText__logo is-on" data-for="home" src="./logoMain.png" alt="خليل" />
+          <img class="centerText__logo is-hidden" data-for="designs" src="./additionalWords1.png" alt="" />
+          <img class="centerText__logo is-hidden" data-for="contact" src="./additionalWords2.png" alt="" />
+        </div>
+
+        <p class="centerText__subtitle" data-for="home">مقدمة من طرف المبدع</p>
+        <p class="centerText__subtitle is-hidden" data-for="designs">إخدش البطاقة !</p>
+        <p class="centerText__subtitle is-hidden" data-for="contact">اضغط على الرابط للتواصل</p>
+      </section>
+
+      <!-- Scroll indicator -->
+      <div class="scrollIndicator" id="scrollIndicator">
+        <div class="scrollIndicator__mouse">
+          <div class="scrollIndicator__wheel"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
