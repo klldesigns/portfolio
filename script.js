@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('loader');
+  document.body.classList.add('is-loading');
 
   // Handle Loader Fade Out
   window.addEventListener('load', () => {
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       if (loader) {
         loader.classList.add('fade-out');
+        document.body.classList.remove('is-loading');
       }
     }, 1500);
   });

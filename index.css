@@ -288,6 +288,11 @@
   z-index: 1;
   pointer-events: none;
   animation: cloudLoopScroll 30s linear infinite;
+  animation-play-state: running;
+}
+
+body.is-loading .cloud-loop-container {
+  animation-play-state: paused;
 }
 
 .cloud-loop {
