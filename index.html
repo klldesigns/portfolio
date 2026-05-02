@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lama+Sans:wght@600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rakkas:wght@400&display=swap" />
+  <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ===== LAYER 2: Fixed overlay ===== -->
+  <div class="fixed-layer theme-blue" id="fixed-layer">
+
+    <!-- Navbar -->
+    <header class="main-header">
+      <nav class="navbar">
+        <a href="#contact" class="nav-link">التواصل</a>
+        <a href="#designs" class="nav-link">التصاميم</a>
+        <a href="#home" class="nav-link active">الرئيسية</a>
+      </nav>
+    </header>
+
+    <!-- Side text (left side, vertically centered) -->
+    <div class="fixed-side-text">
+      <h3 class="fixed-text-item">تصميم</h3>
+      <h3 class="fixed-text-item">لافت</h3>
+      <h3 class="fixed-text-item">نظيف</h3>
+      <h3 class="fixed-text-item">بارز عن غيره</h3>
+      <h3 class="fixed-text-item">يترك أثرًا</h3>
+    </div>
+
+    <!-- YouTube badge (top right) -->
+    <div class="fixed-youtube-badge">
+      <div class="youtube-inner">
+        <div class="custom-youtube-inner">
+          <div class="yt-label-top">مخصصة</div>
+          <div class="yt-label-bottom">للـ YouTube</div>
+        </div>
+        <img class="logosyoutube-icon" loading="lazy" alt="" src="./public/logos-youtube-icon2.svg">
+      </div>
+    </div>
+
+    <!-- Platform handle (right side, rotated) -->
+    <div class="fixed-platform">
+      <div class="klldesigns-fixed">@klldesigns كل المنصات</div>
+    </div>
+
+  </div>
+
+  <!-- ===== LAYER 1: Snap scroll content ===== -->
+  <div class="scroll-layer" id="scroll-layer">
+
+    <!-- Page 1: Home -->
+    <main class="page1" id="home">
+      <!-- Cloud moves right-to-left in a continuous loop -->
+      <div class="cloud-loop-container">
+        <img class="cloud-loop cloud-loop-1" alt="" src="./public/cloud@2x.png" />
+        <img class="cloud-loop cloud-loop-2" alt="" src="./public/cloud@2x.png" />
+      </div>
+
+      <!-- Top: title badge -->
+      <div class="page1-top reveal reveal-down reveal-delay-1">
+        <div class="scratch-element-wrapper">
+          <div class="scratch-element">
+            <div class="wrapper">
+              <h2 class="h2">تصاميم صور مصغرة</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: main logo (stable, behind cloud) -->
+      <div class="page1-logo reveal reveal-scale reveal-delay-2">
+        <div class="group">
+          <img class="main-logo" loading="lazy" alt="Logo" src="./public/mainlogo.png" />
+        </div>
+      </div>
+
+      <!-- Bottom: credit line -->
+      <div class="page1-bottom reveal reveal-up reveal-delay-3">
+        <h2 class="h22">مقدمة من طرف المبدع</h2>
+      </div>
+    </main>
+
+    <!-- Page 2: Designs — Before/After Carousel -->
+    <section class="page2" id="designs">
+
+      <!-- Background logo watermark -->
+      <div class="logosecond-parent page2-watermark reveal reveal-scale reveal-delay-2">
+        <div class="logosecond">ـليل</div>
+      </div>
+
+      <!-- Before/After Carousel -->
+      <div class="page2-center reveal reveal-up reveal-delay-1">
+        <div class="nl-showcase">
+          <!-- Main Stage with 3D Tilt Wrapper -->
+          <div class="nl-stage-wrapper" id="nl-stage-wrapper">
+            <div class="ba-slider" id="nl-main-slider">
+              <img class="ba-before" id="nl-before-img" src="./public/designs/1 before.png" alt="Before" />
+              <div class="ba-after-overlay" id="nl-after-overlay">
+                <img class="ba-after" id="nl-after-img" src="./public/designs/1 after.png" alt="After" />
+              </div>
+              <div class="ba-handle" id="nl-handle">
+                <div class="ba-handle-line"></div>
+                <div class="ba-handle-circle">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 4L3 10L7 16" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M13 4L17 10L13 16" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="ba-handle-line"></div>
+              </div>
+              <div class="ba-label ba-label-before">قبل</div>
+              <div class="ba-label ba-label-after">بعد</div>
+            </div>
+          </div>
+
+          <h3 class="h312" style="margin-top: 15px;">إسحب للمقارنة !</h3>
+
+          <!-- Glassmorphism Thumbnail Dock -->
+          <div class="nl-dock">
+            <div class="nl-dock-item active" data-index="0" data-before="./public/designs/1 before.png"
+              data-after="./public/designs/1 after.png">
+              <img src="./public/designs/1 after.png" alt="Thumb 1">
+            </div>
+            <div class="nl-dock-item" data-index="1" data-before="./public/designs/4 before.png"
+              data-after="./public/designs/4 after.png">
+              <img src="./public/designs/4 after.png" alt="Thumb 2">
+            </div>
+            <div class="nl-dock-item" data-index="2" data-before="./public/designs/5 before.png"
+              data-after="./public/designs/5 after.png">
+              <img src="./public/designs/5 after.png" alt="Thumb 3">
+            </div>
+            <div class="nl-dock-item" data-index="3" data-before="./public/designs/7 before.png"
+              data-after="./public/designs/7 after.png">
+              <img src="./public/designs/7 after.png" alt="Thumb 4">
+            </div>
+            <div class="nl-dock-item" data-index="4" data-before="./public/designs/8 before.png"
+              data-after="./public/designs/8 after.png">
+              <img src="./public/designs/8 after.png" alt="Thumb 5">
+            </div>
+            <div class="nl-dock-item" data-index="5" data-before="./public/designs/9 before.png"
+              data-after="./public/designs/9 after.png">
+              <img src="./public/designs/9 after.png" alt="Thumb 6">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Page 3: Contact -->
+    <section class="page3" id="contact">
+
+      <!-- Background decoration group — rotates with carousel -->
+      <div class="rotate-contact-container">
+        <img class="rotate-contact-img" src="./public/rotateContact.png" alt="Rotate Contact" />
+      </div>
+
+      <!-- Clouds decoration -->
+      <div class="clouds">
+        <img class="icon" alt="" src="./public/cloud@2x.png" />
+        <img class="icon2" alt="" src="./public/cloud@2x.png" />
+      </div>
+
+      <!-- Small clouds at the bottom edge -->
+      <div class="small-clouds">
+        <img src="./public/cloud@2x.png" class="sc-1" alt="cloud">
+        <img src="./public/cloud@2x.png" class="sc-2" alt="cloud">
+        <img src="./public/cloud@2x.png" class="sc-3" alt="cloud">
+        <img src="./public/cloud@2x.png" class="sc-4" alt="cloud">
+      </div>
+
+      <!-- Center: contact content -->
+      <div class="page3-center">
+        <!-- Title -->
+        <h2 class="contact-title reveal reveal-down reveal-delay-1">تواصل معنا – للتعاون المهني وخدمات التصميم</h2>
+
+        <!-- Contact carousel -->
+        <div class="contact-carousel2 reveal reveal-up reveal-delay-2">
+          <button class="nav-arrow left" id="carousel-prev">
+            <img src="./public/Arrow-2.svg" alt="prev">
+          </button>
+
+          <div class="carousel-content-wrapper">
+            <div class="carousel-track" id="carousel-track">
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <a href="https://tiktok.com/@klldesigns" target="_blank" style="text-decoration: none; width: 100%; display: flex; justify-content: center;">
+                  <div class="contact-card-frame" style="background-image: url('./public/contactframe.png');">
+                    <div class="profile-section">
+                      <img src="./public/Frame-38119-2@2x.png" class="profile-image" alt="Profile">
+                      <div class="profile-info">
+                        <h2 class="profile-name">TikTok</h2>
+                        <h2 class="profile-handle">@klldesigns</h2>
+                      </div>
+                    </div>
+                    <div class="link-section">
+                      <div class="link-circle">
+                        <img src="./public/link.png" class="link-image" alt="Link">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <a href="https://instagram.com/klldesigns" target="_blank" style="text-decoration: none; width: 100%; display: flex; justify-content: center;">
+                  <div class="contact-card-frame" style="background-image: url('./public/contactframe.png');">
+                    <div class="profile-section">
+                      <img src="./public/Frame-38119-2@2x.png" class="profile-image" alt="Profile">
+                      <div class="profile-info">
+                        <h2 class="profile-name">Instagram</h2>
+                        <h2 class="profile-handle">@klldesigns</h2>
+                      </div>
+                    </div>
+                    <div class="link-section">
+                      <div class="link-circle">
+                        <img src="./public/link.png" class="link-image" alt="Link">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <a href="https://x.com/klldesigns" target="_blank" style="text-decoration: none; width: 100%; display: flex; justify-content: center;">
+                  <div class="contact-card-frame" style="background-image: url('./public/contactframe.png');">
+                    <div class="profile-section">
+                      <img src="./public/Frame-38119-2@2x.png" class="profile-image" alt="Profile">
+                      <div class="profile-info">
+                        <h2 class="profile-name">X</h2>
+                        <h2 class="profile-handle">@klldesigns</h2>
+                      </div>
+                    </div>
+                    <div class="link-section">
+                      <div class="link-circle">
+                        <img src="./public/link.png" class="link-image" alt="Link">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <button class="nav-arrow right" id="carousel-next">
+            <img src="./public/Arrow-1.svg" alt="next">
+          </button>
+        </div>
+
+        <!-- Pagination dots -->
+        <div class="pagination reveal reveal-up reveal-delay-3" id="carousel-dots">
+          <img class="dot-img" src="./public/contactCaroselDot2.png" data-index="0">
+          <img class="dot-img" src="./public/contactCaroselDot1.png" data-index="1">
+          <img class="dot-img" src="./public/contactCaroselDot1.png" data-index="2">
+        </div>
+
+        <!-- Platform links -->
+        <div class="platform-links-center">
+          <div class="klldesigns3">@klldesigns كل المنصات</div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div id="custom-cursor" class="custom-cursor" style="display: none;">
+    <div class="custom-cursor-inner">
+      <img id="custom-cursor-img" src="./public/cursor.png" alt="Custom Cursor" />
+    </div>
+  </div>
+
+</body>
+
+</html>

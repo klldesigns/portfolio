@@ -1,0 +1,164 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  line-height: normal;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+/* Re-enable pointer events for interactive elements if they were blocked by img */
+.nav-arrow img,
+.nl-dock-item img,
+.link-image,
+.profile-image,
+.dot-img {
+  pointer-events: auto;
+}
+
+/* Hide scrollbar but keep scrolling */
+.scroll-layer::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-layer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-dodgerblue-100: #4f8ff8;
+  --color-dodgerblue-200: #3b82f6;
+  --color-lavender: #e0ecff;
+  --color-white: #fff;
+
+  /* Gap */
+  --gap-0: 0px;
+  --gap-1: 1px;
+  --gap-2: 2px;
+  --gap-3: 3px;
+  --gap-4: 4px;
+  --gap-14: 14px;
+  --gap-15: 15px;
+  --gap-16: 16px;
+  --gap-18: 18px;
+  --gap-20: 20px;
+  --gap-32: 32px;
+  --gap-37: 37px;
+  --gap-48: 48px;
+  --gap-100: 100px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-2: 2px;
+  --padding-8: 8px;
+  --padding-14: 14px;
+  --padding-16: 16px;
+  --padding-20: 20px;
+  --padding-24: 24px;
+  --padding-40: 40px;
+  --padding-41: 41px;
+  --padding-47: 47px;
+  --padding-95: 95px;
+
+  /* BorderRadius */
+  --br-8: 8px;
+
+  /* Font */
+  --font-lama-sans: Lama Sans;
+  --font-rakkas: Rakkas;
+
+  /* FontSize */
+  --fs-18: 18px;
+  --fs-22: 22px;
+  --fs-23: 23px;
+  --fs-30: 30px;
+
+  /* Shadows */
+  --shadow-drop: 0px 4px 104.1px rgba(255, 255, 255, 0.25);
+  --shadow-inner: 0px -117px 22.1px rgba(255, 255, 255, 0.08) inset;
+
+  /* Gradients */
+  --gradient-1: radial-gradient(136.47% 136.47% at 0% 11.86%,
+      #a5c7fe,
+      var(--color-dodgerblue-200));
+
+  /* WidthHeights */
+  --height-19: 19px;
+  --height-37: 37px;
+  --height-70: 70px;
+  --height-562: 562px;
+  --height-22_1: 22.1px;
+  --min-w-67: 67px;
+  --min-w-94: 94px;
+  --width-1: 1px;
+  --width-19: 19px;
+  --width-53: 53px;
+  --width-70: 70px;
+
+  /* LineHeights */
+  --lh-18: 18px;
+
+  --top-0: 0px;
+}
+
+/* ============================================
+   CUSTOM CURSOR LOGIC
+   ============================================ */
+
+@media (pointer: fine) {
+  body, a, button, .nl-dock-item, .nav-arrow {
+    cursor: none !important;
+  }
+  .ba-slider, .ba-handle {
+    cursor: col-resize !important;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 10000;
+  will-change: transform;
+  transition: opacity 0.2s ease-out;
+}
+
+.custom-cursor-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translate(-20%, -20%) scale(1);
+  transition: transform 0.1s ease-out;
+}
+
+.custom-cursor-inner.clicked {
+  transform: translate(-20%, -20%) scale(0.9);
+}
+
+.custom-cursor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.04)) drop-shadow(0 4px 3px rgba(0,0,0,0.1));
+}
